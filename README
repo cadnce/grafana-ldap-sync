@@ -1,0 +1,16 @@
+
+# List users
+curl 'http://localhost:3000/api/users' -XGET -u admin -H "Content-Type: application/json"
+
+# Add a user
+
+curl -H "Content-Type: application/json" -XPOST -u admin  http://localhost:3000/api/admin/users -d '{"name":"User","email":"user@graf.com","login":"user","password":"userpassword" }'
+
+
+# Make user grafana admin
+curl 'http://localhost:3000/api/admin/users/3/permissions' -XPUT -H 'Content-Type: application/json' -u admin  -d '{"isGrafanaAdmin":true}'
+
+
+# LDAP test server
+http://www.forumsys.com/en/tutorials/integration-how-to/ldap/online-ldap-test-server/
+ldap.forumsys.com 
